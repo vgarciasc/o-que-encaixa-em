@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>O que que encaixa em...</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+        <script src="dict.js"></script>
+        <script src="main.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="search-container">
+                <h2>O que que encaixa em...</h2>
+                <input type="text" id="search-term" name="search-term" placeholder="__TOR"> 
+                <sub><span id="help"><u>[?]</u></span></sub>
+                <br><br>
+                <button id="search-button" onclick="display_results()">Buscar</button>
+            </div>
+            <div id="tooltip">
+                Ferramenta pra buscar palavras no dicionário.
+                <br>
+                Muito útil pra montar palavras cruzadas.
+                <br><br>
+                <b>Códigos:</b>
+                <ul>
+                    <li><code>_</code>: 1 letra qualquer</li>
+                    <li><code>/</code>: 1 ou 2 letras quaisquer</li>
+                    <li><code>*</code>: 1 ou mais letras quaisquer</li>
+                </ul>
+                <b>Exemplos:</b>
+                <ul>
+                    <li><code>_TOR</code>: ator.</li>
+                    <li><code>__TOR</code>: autor, fator, motor, etc.</li>
+                    <li><code>/TOR</code>: ator, autor, fator, motor, etc.</li>
+                    <li><code>*TOR</code>: ator, autor, fator, cantor, doutor, projetor, etc.</li>
+                </ul>
+            </div>
+            <div id="results-container">
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).on("mousemove", function(evt) {
+            $("#tooltip").css({left: (evt.pageX + 10), top: (evt.pageY + 10)});
+        });
+
+        $('#help').bind('mouseover', function(e) {
+            $("#tooltip").show();
+        })
+
+        $('#help').bind('mouseout', function() {
+            $('#tooltip').hide();
+        })
+
+        $("#tooltip").hide()
+    </script>
+</html>

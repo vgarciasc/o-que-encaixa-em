@@ -1,0 +1,25 @@
+#main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-container {
+    text-align: center;
+}
+
+#results-container {
+    margin-left: 10px;
+    height: 400px;
+    width: 100px;
+    overflow-y: scroll;
+}
+
+#tooltip {
+    position: absolute;
+    border: solid 1px black;
+    width: 400px;
+    padding: 5px;
+}
